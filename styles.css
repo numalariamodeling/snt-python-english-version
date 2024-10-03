@@ -43,7 +43,7 @@ body {
 
 
 .menu {
-    margin: 7.5px 0;
+    margin: 10px 0;
 }
 
 .submenu {
@@ -53,12 +53,19 @@ body {
 }
 
 .submenu li {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .menu-header {
     cursor: pointer;
     font-weight: bold;
+
+
+
+    display: flex;
+    justify-content: space-between; /* This pushes the menu text to the left and the indicator to the right */
+    align-items: center; /* Vertically aligns the text and the indicator */
+    background-color: transparent;
 }
 
 
@@ -105,3 +112,42 @@ button {
 .sidebar, .main-content {
     height:100%;
 }
+
+.menu-link {
+    color: blue;
+    text-decoration: none; /* This removes the underline */    
+}
+
+
+
+.menu-link.selected {
+    color: red; /* Color when selected */
+}
+
+
+.menu-header {
+    cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.menu-indicator {
+    margin-right: 5px; /* Space between indicator and text */
+}
+
+.submenu {
+    padding-left: 20px; /* Indentation for submenu items */
+}
+
+
+.menu-indicator {
+    /* You can customize the indicator's styles here */
+    font-weight: bold; /* Make the indicator bold (optional) */
+    color: black;
+}
+
+
+.menu-header .menu-indicator {
+    font-size: 18px;
+    margin-left: auto; /* Ensures that all indicators are aligned at the extreme right */
+}
+
+    
