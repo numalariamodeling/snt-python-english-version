@@ -81,12 +81,14 @@ body {
 
 /* Style for the code block */
 pre {
-    background-color: white;
+    background-color: #F8FBFD;
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
     width: 700px;
-    font-weight: bold;   
+    
+    
+    
 }
 
 
@@ -113,7 +115,7 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #F8FBFD ;
+    background-color: #AADEE9;
     color: white;
     border: none;
     border-radius: 4px;
@@ -135,10 +137,8 @@ button {
 }
 
 .menu-link {
-    color: #AADEE9;
-    text-decoration: none; /* This removes the underline */   
-    border: none;
-    border-radius: 4px;
+    color: blue;
+    text-decoration: none; /* This removes the underline */    
 }
 
 
@@ -181,8 +181,8 @@ button {
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: black;                     /* Make the text blue */
-    text-decoration: none;       /* Underline text */
+    color: blue;                     /* Make the text blue */
+    text-decoration: underline;       /* Underline text */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
@@ -194,7 +194,7 @@ button {
 }
 
 .text-button:hover {
-    color: red;                 /* Darker shade when hovering */
+    color: darkblue;                 /* Darker shade when hovering */
     text-decoration: none;           /* Remove underline on hover */
 }
 
