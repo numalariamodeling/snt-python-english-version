@@ -181,8 +181,8 @@ button {
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: blue;                     /* Make the text blue */
-    text-decoration: underline;       /* Underline text */
+    color: black;                     /* Make the text blue */
+    text-decoration: none;       /* Underline text */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
