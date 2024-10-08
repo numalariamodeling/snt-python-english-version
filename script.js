@@ -42,15 +42,13 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <p>This section explains the workflow of importing and managing shapefiles using R.</p>
 
             <h3>Step 1: Install Necessary Libraries</h3>
-            <p>Before starting, ensure you have the required R packages installed. This can be done using the following code:</p>
+            <p>Before starting, ensure you have the required R packages installed.</p>
+            <p>This can be done using the following code:</p>
             <pre><code>
 # Install necessary libraries
-install.packages(c("sf", "ggplot2", "dplyr"))
-
-            
+install.packages(c("sf", "ggplot2", "dplyr"))      
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
-
             <h3>Step 2: Load Necessary Libraries</h3>
             <p>After installing the libraries, you need to load them into your R environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
@@ -60,7 +58,6 @@ library(dplyr)
 library(ggplot2)
             </code></pre>
             <p>This step makes the functions from these libraries available for use in your script.</p>
-
             <h3>Step 3: Import Shapefiles</h3>
             <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
@@ -71,7 +68,6 @@ import_shapefile <- function(filepath) {
 }
             </code></pre>
             <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>
-
             <h3>Step 4: Rename and Match Names</h3>
             <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
@@ -112,34 +108,28 @@ visualize_shapefile <- function(shapefile) {
           
             <pre id="codeBlock">
                 <code>
-
 # Install  necessary libraries
 install.packages(c("sf", "ggplot2", "dplyr"))
-
 # Load necessary libraries
 library(sf)
 library(dplyr)
 library(ggplot2)
-
 # Import Shapefiles
 import_shapefile <- function(filepath) {
     shapefile <- st_read(filepath)  # Read the shapefile
     return(shapefile)  # Return the loaded shapefile
 }
-
 # Rename and Match Names
 rename_shapefile_columns <- function(shapefile, new_names) {
     colnames(shapefile) <- new_names  # Rename columns
     return(shapefile)  # Return the renamed shapefile
 }
-
 # Link Shapefiles to Relevant Scales
 link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
     linked_shapefile <- shapefile %>%
         left_join(scales_df, by = link_col)  # Merge shapefile with scales
     return(linked_shapefile)  # Return the linked shapefile
 }
-
 # Visualizing Shapefiles and Making Basic Maps
 visualize_shapefile <- function(shapefile) {
     ggplot(data = shapefile) +
@@ -147,8 +137,6 @@ visualize_shapefile <- function(shapefile) {
         theme_minimal() +
         labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
 }
-
-
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
@@ -170,17 +158,13 @@ visualize_shapefile <- function(shapefile) {
             <p></p>
             <pre><code>
 
-Code block
-
-            
+Code block      
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
             <h3>Step 2: </h3>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-
-
 Code block
 
 
