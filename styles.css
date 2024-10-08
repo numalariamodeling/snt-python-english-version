@@ -115,7 +115,7 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #AADEE9;
+    background-color: #5EAADD;
     color: white;
     border: none;
     border-radius: 4px;
@@ -137,7 +137,7 @@ button {
 }
 
 .menu-link {
-    color: blue;
+    color: black;
     text-decoration: none; /* This removes the underline */    
 }
 
