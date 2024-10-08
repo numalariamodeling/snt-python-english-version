@@ -81,8 +81,8 @@ body {
 
 /* Style for the code block */
 pre {
-    background-color: lightgray;
-    padding: 10px;
+    background-color: #F8FBFD;
+    padding: 20px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
     width: 700px;
@@ -98,7 +98,7 @@ pre ~ p,
 p + pre,
 p ~ pre {
     width: 700px;
-    margin:10px 0;
+    margin:20px 0;
 }
 
 /* Apply to all headings before or after the <pre> block */
@@ -107,7 +107,7 @@ pre ~ h1, pre ~ h2, pre ~ h3, pre ~ h4, pre ~ h5, pre ~ h6,
 h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre,
 h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     width: 700px;
-    margin:10px 0;
+    margin:20px 0;
 }
 
 .copy-button {
@@ -115,8 +115,8 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #F8FBFD;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
