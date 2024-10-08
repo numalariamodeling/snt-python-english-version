@@ -76,6 +76,20 @@
             </p>
             <ul class="submenu">
                 <li><a href="#A.1 Shapefiles" class="menu-link" onclick="selectLink(this); loadContent('shapefiles')"><span class="link-text">A.1 Shapefiles</span></a></li>
+
+                <li>
+            <p class="menu-header submenu-header" onclick="toggleMenu(this)">
+                <span class="menu-text">A.2 Health Facilities</span>
+                <span class="menu-indicator">></span>
+            </p>
+            <ul class="submenu">
+                <!-- Submenu items for Health Facilities -->
+                <li><a href="#A.2.1 Importing Health Facilities Data" class="menu-link" onclick="selectLink(this); loadContent('importHFdata')"><span class="link-text">A.2.1 Importing Health Facilities Data</span></a></li>
+                <li><a href="#A.2.2 Cleaning Health Facilities Data" class="menu-link" onclick="selectLink(this); loadContent('cleanHFdata')"><span class="link-text">A.2.2 Cleaning Health Facilities Data</span></a></li>
+                <li><a href="#A.2.3 Merging Health Facilities Data" class="menu-link" onclick="selectLink(this); loadContent('mergeHFdata')"><span class="link-text">A.2.3 Merging Health Facilities Data</span></a></li>
+                <li><a href="#A.2.4 Validating Health Facilities Data" class="menu-link" onclick="selectLink(this); loadContent('validateHFdata')"><span class="link-text">A.2.4 Validating Health Facilities Data</span></a></li>
+            </ul>
+        </li>     
                 <li><a href="#A.2 Health Facilities" class="menu-link" onclick="selectLink(this); loadContent('hf')"><span class="link-text">A.2 Health Facilities</span></a></li> 
                 <li><a href="#A.3 Routine Case Data from DHIS2" class="menu-link" onclick="selectLink(this); loadContent('dhis2')"><span class="link-text">A.3 Routine Case Data from DHIS2</span></a></li>
                 <li><a href="#A.4 DHS Data" class="menu-link" onclick="selectLink(this); loadContent('dhs')"><span class="link-text">A.4 DHS Data</span></a></li>
