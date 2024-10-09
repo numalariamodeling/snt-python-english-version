@@ -30,7 +30,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis..</p>
         `,
 
-#
+
         shapefiles: `
            
             <div class="fixed-buttons">
