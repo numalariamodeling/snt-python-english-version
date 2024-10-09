@@ -45,7 +45,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h3>Step 1: Install Necessary Libraries</h3>
             <p>Before starting, ensure you have the required R packages installed.</p>
             <p>This can be done using the following code:</p>
-            <pre><code>
+            <pre><code class="language-r">
 # Install necessary libraries
 
 install.packages(c("sf", "ggplot2", "dplyr"))      
@@ -54,6 +54,9 @@ install.packages(c("sf", "ggplot2", "dplyr"))
             <h3>Step 2: Load Necessary Libraries</h3>
             <p>After installing the libraries, you need to load them into your R environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+            <pre><code class="language-r">
+
+
 # Load necessary libraries
 library(sf)
 
