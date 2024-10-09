@@ -81,7 +81,7 @@ body {
 
 /* Style for the code block */
 pre {
-    background-color: #E6E6E6;
+    background-color: lightgray;
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
@@ -115,7 +115,7 @@ h1 ~ pre, h2 ~ pre, h3 ~ pre, h4 ~ pre, h5 ~ pre, h6 ~ pre {
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #5EAADD;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
@@ -137,7 +137,7 @@ button {
 }
 
 .menu-link {
-    color: #5EAADD;
+    color: blue;
     text-decoration: none; /* This removes the underline */    
 }
 
@@ -181,8 +181,8 @@ button {
 .text-button {
     background: none;                /* Remove background */
     border: none;                    /* Remove border */
-    color: black;                     /* Make the text blue */
-    text-decoration: none;       /* Underline text */
+    color: blue;                     /* Make the text blue */
+    text-decoration: underline;       /* Underline text */
     cursor: pointer;                 /* Show pointer on hover */
     font-size: 16px;                 /* Adjust font size */
     padding: 0;                      /* Remove default padding */
@@ -209,41 +209,3 @@ button {
     z-index: 1000;                   /* Ensure buttons are on top */
 }
     
-
-
-
-/* Submenu styles */
-.submenu {
-    list-style-type: none;
-    padding-left: 20px;
-    display: none; /* Hidden by default */
-}
-
-.menu-header {
-    cursor: pointer; /* Shows pointer on hover */
-}
-
-.menu-header.active + .submenu {
-    display: block; /* Show the submenu when the parent menu is active */
-}
-
-.submenu li {
-    margin-top: 5px;
-}
-
-.submenu a {
-    text-decoration: none;
-    color: #555; /* Color of submenu links */
-}
-
-.submenu a:hover {
-    color: #000; /* Color when hovering over submenu links */
-}
-
-.menu-indicator {
-    float: right;
-}
-
-.menu-header.active .menu-indicator {
-    transform: rotate(90deg); /* Rotate indicator when menu is expanded */
-}
