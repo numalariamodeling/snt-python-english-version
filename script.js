@@ -30,6 +30,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis..</p>
         `,
 
+#
         shapefiles: `
            
             <div class="fixed-buttons">
@@ -86,60 +87,56 @@ rename_shapefile_columns <- function(shapefile, new_names) {
             <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Link Shapefiles to Relevant Scales
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
-}
+def link_shapefiles_to_scales(shapefile, scales_df, link_col):
+    linked_shapefile = shapefile.merge(scales_df, how='left', on=link_col)  # Merge shapefile with scales
+    return linked_shapefile  # Return the linked shapefile
             </code></pre>
-            <p>This function performs a left join between the shapefile and a data frame containing scale information based on a specified linking column.</p>
+            <p>This function performs a left join between the GeoDataFrame and a DataFrame containing scale information based on a specified linking column.</p>
 
             <h3>Step 6: Visualizing Shapefiles and Making Basic Maps</h3>
             <p>Finally, you can visualize the shapefile using <code>ggplot2</code>. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Visualizing Shapefiles and Making Basic Maps
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
-        theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
-}
+def visualize_shapefile(shapefile, variable):
+    shapefile.plot(column=variable, cmap='viridis', legend=True)  # Visualize the shapefile
+    plt.title("Shapefile Visualization")  # Set title
+    plt.show()  # Show the plot
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function creates a simple map visualization using the spatial data. Replace <code>some_variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
+            <p>This function creates a simple map visualization using the spatial data. Replace <code>variable</code> with the name of the column you want to visualize.</p>
+
 
             <h3 id="fullCode">Full code</h3>
           
             <pre id="codeBlock">
                 <code>
-# Install  necessary libraries
-install.packages(c("sf", "ggplot2", "dplyr"))
+# Install necessary libraries
+pip install geopandas matplotlib
+
 # Load necessary libraries
-library(sf)
-library(dplyr)
-library(ggplot2)
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import pandas as pd
+
 # Import Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
-}
+def import_shapefile(filepath):
+    shapefile = gpd.read_file(filepath)  # Read the shapefile
+    return shapefile  # Return the loaded shapefile
+
 # Rename and Match Names
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
-}
+def rename_shapefile_columns(shapefile, new_names):
+    shapefile.columns = new_names  # Rename columns
+    return shapefile  # Return the renamed shapefile
+
 # Link Shapefiles to Relevant Scales
-link_shapefiles_to_scales <- function(shapefile, scales_df, link_col) {
-    linked_shapefile <- shapefile %>%
-        left_join(scales_df, by = link_col)  # Merge shapefile with scales
-    return(linked_shapefile)  # Return the linked shapefile
-}
+def link_shapefiles_to_scales(shapefile, scales_df, link_col):
+    linked_shapefile = shapefile.merge(scales_df, how='left', on=link_col)  # Merge shapefile with scales
+    return linked_shapefile  # Return the linked shapefile
+
 # Visualizing Shapefiles and Making Basic Maps
-visualize_shapefile <- function(shapefile) {
-    ggplot(data = shapefile) +
-        geom_sf(aes(fill = some_variable)) +  # Visualize the shapefile
-        theme_minimal() +
-        labs(title = "Shapefile Visualization", fill = "Variable")  # Set title and legend
-}
+def visualize_shapefile(shapefile, variable):
+    shapefile.plot(column=variable, cmap='viridis', legend=True)  # Visualize the shapefile
+    plt.title("Shapefile Visualization")  # Set title
+    plt.show()  # Show the plot
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
