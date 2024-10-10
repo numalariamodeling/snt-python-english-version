@@ -52,8 +52,7 @@ pip install geopandas matplotlib pandas
             <p>This code installs the <code>geopandas</code> package for handling spatial data, <code>matplotlib</code> for data visualization, and <code>pandas</code> for data manipulation.</p>
             <h3>Step 2: Load Necessary Libraries</h3>
             <p>After installing the libraries, you need to load them into your Python environment:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-            
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>            
 # Load necessary libraries
 import geopandas as gpd
 import pandas as pd
