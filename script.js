@@ -146,10 +146,10 @@ def visualize_shapefile(shapefile, variable):
             </div>
         
             <h3>A. Data Assembly and Manangement>A.2 Health Facilities</h3>
-            <h3 id="stepByStep">Step by step approach</h3>
+            <h4 id="stepByStep">Step by step approach</h4>
             <p></p>
 
-            <h3>Step 1: </h3>
+            <h5>Step 1: </h5>
             <p></p>
             <pre><code>
 
@@ -157,7 +157,7 @@ Code block
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
-            <h3>Step 2: </h3>
+            <h5>Step 2: </h5>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 Code block
@@ -167,7 +167,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 3: </h3>
+            <h5>Step 3: </h5>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -181,7 +181,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 4: </h3>
+            <h5>Step 4: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -192,7 +192,7 @@ Code block
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
-            <h3>Step 5: </h3>
+            <h5>Step 5: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -205,7 +205,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 6: </h3>
+            <h5>Step 6: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -277,10 +277,10 @@ Code block
             </div>
         
             <h3>A. Data Assembly and Manangement>A.3 Routine Case Data from DHIS2</h3>
-            <h3 id="stepByStep">Step by step approach</h3>
+            <h4 id="stepByStep">Step by step approach</h4>
             <p></p>
 
-            <h3>Step 1: </h3>
+            <h5>Step 1: </h5>
             <p></p>
             <pre><code>
 
@@ -290,7 +290,7 @@ Code block
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
-            <h3>Step 2: </h3>
+            <h5>Step 2: </h5>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -302,7 +302,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 3: </h3>
+            <h5>Step 3: </h5>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -316,7 +316,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 4: </h3>
+            <h5>Step 4: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -327,7 +327,7 @@ Code block
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
-            <h3>Step 5: </h3>
+            <h5>Step 5: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -340,7 +340,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 6: </h3>
+            <h5>Step 6: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -412,10 +412,10 @@ Code block
             </div>
         
             <h3>A. Data Assembly and Manangement>A.4 DHS Data</h3>
-            <h3 id="stepByStep">Step by step approach</h3>
+            <h4 id="stepByStep">Step by step approach</h4>
             <p></p>
 
-            <h3>Step 1: </h3>
+            <h5>Step 1: </h5>
             <p></p>
             <pre><code>
 
@@ -425,7 +425,7 @@ Code block
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
             <p></p>
 
-            <h3>Step 2: </h3>
+            <h5>Step 2: </h5>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -437,7 +437,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 3: </h3>
+            <h5>Step 3: </h5>
             <p> </p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
@@ -451,7 +451,7 @@ Code block
             </code></pre>
             <p></p>
 
-            <h3>Step 4: </h3>
+            <h5>Step 4: </h5>
             <p></p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 
