@@ -44,7 +44,7 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
             <h5>Step 1: Install Necessary Libraries</h5>
             <p>Before starting, ensure you have the required Python packages installed.</p>
             <p>This can be done using the following code:</p>
-            <pre><code class="language-python">
+            <pre><code>
 # Install necessary libraries
 
 pip install geopandas matplotlib pandas      
@@ -52,8 +52,8 @@ pip install geopandas matplotlib pandas
             <p>This code installs the <code>geopandas</code> package for handling spatial data, <code>matplotlib</code> for data visualization, and <code>pandas</code> for data manipulation.</p>
             <h3>Step 2: Load Necessary Libraries</h3>
             <p>After installing the libraries, you need to load them into your Python environment:</p>
-            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
-            <pre><code class="language-python">
+            <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
+            
 # Load necessary libraries
 import geopandas as gpd
 import pandas as pd
