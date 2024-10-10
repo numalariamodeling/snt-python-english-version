@@ -37,11 +37,11 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h1>A. Data Assembly and Management>A.1 Shapefiles</h1>
-            <h2 id="stepByStep">Step by step approach</h2>
+            <h3>A. Data Assembly and Management>A.1 Shapefiles</h3>
+            <h4 id="stepByStep">Step by step approach</h4>
             <p>This section explains the workflow of importing and managing shapefiles using Python.</p>
 
-            <h3>Step 1: Install Necessary Libraries</h3>
+            <h5>Step 1: Install Necessary Libraries</h5>
             <p>Before starting, ensure you have the required Python packages installed.</p>
             <p>This can be done using the following code:</p>
             <pre><code>
