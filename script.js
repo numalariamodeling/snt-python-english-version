@@ -23,13 +23,12 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
 
 
             <h3>Target audience</h3>
-            <p>Anyone doing this kind of work. We assume some basic knowledge of R, some understanding of the data, and a strong connection to the NMCP.</p>
+            <p>Anyone doing this kind of work. We assume some basic knowledge of Python, some understanding of the data, and a strong connection to the NMCP.</p>
 
 
             <h3>Scope</h3>
-            <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis..</p>
+            <p>All analysis steps of SNT up to but not including mathematical modeling; some related analysis.</p>
         `,
-
 
         shapefiles: `
            
@@ -38,87 +37,79 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="text-button" onclick="scrollToSection('fullCode')">Full code</button>
             </div>
         
-            <h3>A. Data Assembly and Manangement>A.1 Shapefiles</h3>
+            <h3>A. Data Assembly and Management>A.1 Shapefiles</h3>
             <h3 id="stepByStep">Step by step approach</h3>
-            <p>This section explains the workflow of importing and managing shapefiles using R.</p>
+            <p>This section explains the workflow of importing and managing shapefiles using Python.</p>
 
             <h3>Step 1: Install Necessary Libraries</h3>
-            <p>Before starting, ensure you have the required R packages installed.</p>
+            <p>Before starting, ensure you have the required Python packages installed.</p>
             <p>This can be done using the following code:</p>
-            <pre><code class="language-r">
+            <pre><code>
 # Install necessary libraries
 
-install.packages(c("sf", "ggplot2", "dplyr"))      
+pip install geopandas matplotlib pandas      
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This code installs the <code>sf</code> package for handling spatial data, <code>ggplot2</code> for data visualization, and <code>dplyr</code> for data manipulation.</p>
+            <p>This code installs the <code>geopandas</code> package for handling spatial data, <code>matplotlib</code> for data visualization, and <code>pandas</code> for data manipulation.</p>
             <h3>Step 2: Load Necessary Libraries</h3>
-            <p>After installing the libraries, you need to load them into your R environment:</p>
+            <p>After installing the libraries, you need to load them into your Python environment:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
-            <pre><code class="language-r">
-
-
 # Load necessary libraries
-library(sf)
-
-library(dplyr)
-
-library(ggplot2)
+import geopandas as gpd
+import pandas as pd
+import matplotlib.pyplot as plt
             </code></pre>
             <p>This step makes the functions from these libraries available for use in your script.</p>
             <h3>Step 3: Import Shapefiles</h3>
-            <p>You can import shapefiles using the <code>st_read</code> function from the <code>sf</code> package. Here’s a function to do that:</p>
+            <p>You can import shapefiles using the <code>read_file</code> function from the <code>geopandas</code> package. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Import Shapefiles
-import_shapefile <- function(filepath) {
-    shapefile <- st_read(filepath)  # Read the shapefile
-    return(shapefile)  # Return the loaded shapefile
-}
+def import_shapefile(filepath):
+    shapefile = gpd.read_file(filepath)  # Read the shapefile
+    return shapefile  # Return the loaded shapefile
             </code></pre>
             <p>This function takes a file path as input, reads the shapefile, and returns it as a spatial object.</p>
             <h3>Step 4: Rename and Match Names</h3>
             <p>Sometimes, the columns in your shapefile may need to be renamed for clarity or to match other datasets. You can do this as follows:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Rename and Match Names
-rename_shapefile_columns <- function(shapefile, new_names) {
-    colnames(shapefile) <- new_names  # Rename columns
-    return(shapefile)  # Return the renamed shapefile
-}
+def rename_shapefile_columns(shapefile, new_names):
+    shapefile.columns = new_names  # Rename columns
+    return shapefile  # Return the renamed shapefile
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function takes a shapefile and a vector of new names, renaming the columns accordingly.</p>
+            <p>This function takes a shapefile and a list of new names, renaming the columns accordingly.</p>
 
             <h3>Step 5: Link Shapefiles to Relevant Scales</h3>
             <p>Link your shapefile to relevant scales or metadata by merging it with another data frame:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Link Shapefiles to Relevant Scales
 def link_shapefiles_to_scales(shapefile, scales_df, link_col):
-    linked_shapefile = shapefile.merge(scales_df, how='left', on=link_col)  # Merge shapefile with scales
+    linked_shapefile = shapefile.merge(scales_df, on=link_col)  # Merge shapefile with scales
     return linked_shapefile  # Return the linked shapefile
             </code></pre>
-            <p>This function performs a left join between the GeoDataFrame and a DataFrame containing scale information based on a specified linking column.</p>
+            <p>This function performs a merge between the shapefile and a data frame containing scale information based on a specified linking column.</p>
 
             <h3>Step 6: Visualizing Shapefiles and Making Basic Maps</h3>
-            <p>Finally, you can visualize the shapefile using <code>ggplot2</code>. Here’s a function to do that:</p>
+            <p>Finally, you can visualize the shapefile using <code>matplotlib</code> and <code>geopandas</code>. Here’s a function to do that:</p>
             <pre><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --><code>
 # Visualizing Shapefiles and Making Basic Maps
 def visualize_shapefile(shapefile, variable):
-    shapefile.plot(column=variable, cmap='viridis', legend=True)  # Visualize the shapefile
-    plt.title("Shapefile Visualization")  # Set title
-    plt.show()  # Show the plot
+    shapefile.plot(column=variable, cmap='viridis', legend=True)
+    plt.title(f'Shapefile Visualization: {variable}')
+    plt.show()
             </code><button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here --></pre>
-            <p>This function creates a simple map visualization using the spatial data. Replace <code>variable</code> with the name of the column you want to visualize.</p>
-
+            <p>This function creates a simple map visualization using the spatial data. Replace <code>variable</code> with the name of the variable you want to visualize in the fill aesthetic.</p>
 
             <h3 id="fullCode">Full code</h3>
           
             <pre id="codeBlock">
                 <code>
 # Install necessary libraries
-pip install geopandas matplotlib
+pip install geopandas matplotlib pandas
 
 # Load necessary libraries
 import geopandas as gpd
-import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Import Shapefiles
 def import_shapefile(filepath):
@@ -132,19 +123,20 @@ def rename_shapefile_columns(shapefile, new_names):
 
 # Link Shapefiles to Relevant Scales
 def link_shapefiles_to_scales(shapefile, scales_df, link_col):
-    linked_shapefile = shapefile.merge(scales_df, how='left', on=link_col)  # Merge shapefile with scales
+    linked_shapefile = shapefile.merge(scales_df, on=link_col)  # Merge shapefile with scales
     return linked_shapefile  # Return the linked shapefile
 
 # Visualizing Shapefiles and Making Basic Maps
 def visualize_shapefile(shapefile, variable):
-    shapefile.plot(column=variable, cmap='viridis', legend=True)  # Visualize the shapefile
-    plt.title("Shapefile Visualization")  # Set title
-    plt.show()  # Show the plot
+    shapefile.plot(column=variable, cmap='viridis', legend=True)
+    plt.title(f'Shapefile Visualization: {variable}')
+    plt.show()
                 </code>
                 <button class="copy-button" onclick="copyCode()">Copy Code</button> <!-- Copy button positioned here -->
             </pre>
-           
         `,
+
+        
 
         hf: `
            
