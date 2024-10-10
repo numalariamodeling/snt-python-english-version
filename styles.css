@@ -81,7 +81,7 @@ body {
 
 /* Style for the code block */
 pre {
-    background-color: #F2F2F3;
+    background-color: #f0f0f0;
     padding: 10px;
     overflow: auto;
     position: relative; /* Add position relative for button positioning */
