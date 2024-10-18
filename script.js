@@ -155,13 +155,7 @@ def visualize_shapefile(shapefile, variable):
            
         `,  
 
- 
-
-
-
-
-
-        
+         
         
     };
 
