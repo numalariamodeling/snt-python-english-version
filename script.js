@@ -48,6 +48,8 @@ As SNT matures, more quality assurance is needed such that NMCPs can be confiden
                 <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-code-library-english-version/#shapefiles';">View R En</button>
                 <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-code-library-french-version/#shapefiles';">View R FR</button>
                 <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-python-french-version/#shapefiles';">View py FR</button>
+                <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-code-library-french-version/#shapefiles';">View St FR</button>
+                <button class="rect-button" onclick="window.location.href='https://numalariamodeling.github.io/snt-python-french-version/#shapefiles';">View St FR</button>
             </div>
             
             <h4 id="stepByStep">Step-by-step guide</h4>
