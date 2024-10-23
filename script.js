@@ -182,18 +182,48 @@ window.onload = function() {
     if (currentUrl.includes('#hf')) {
         loadContent('hf');
     }
-
-
 };
 
 
-// Scroll to the relevant section when buttons are clicked
+
+// Function to scroll to the section when the button is clicked
 function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'auto' });
+    // Scroll to the specific section smoothly
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'auto' });
+    
+    // Remove the 'active' class from all buttons
+    document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
+    
+    // Add the 'active' class to the clicked button
+    document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+}
+
+// Function to check which section is at the top and update the active button
+function handleScroll() {
+    const sections = ['stepByStep', 'sampleR', 'fullCode'];
+    let activeSection = null;
+
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        const rect = section.getBoundingClientRect();
+        
+        // Check if the section is exactly at the top of the viewport
+        if (rect.top <= 0 && rect.bottom >= 0) {
+            activeSection = sectionId;
+        }
+    });
+
+    // Remove the 'active' class from all buttons
+    document.querySelectorAll('.text-button').forEach(button => button.classList.remove('active'));
+
+    // Add the 'active' class to the button corresponding to the section at the top
+    if (activeSection) {
+        document.querySelector(`[data-section="${activeSection}"]`).classList.add('active');
     }
-}       
+}
+
+// Attach the scroll event listener to update the active button based on scroll position
+window.addEventListener('scroll', handleScroll);
 
 
 function copyCode() {
@@ -204,8 +234,6 @@ function copyCode() {
         console.error('Error copying text: ', err);
     });
 }
-
-
 
 document.querySelector('.search-bar').addEventListener('input', function() {
     const query = this.value.toLowerCase();
@@ -221,8 +249,6 @@ document.querySelector('.search-bar').addEventListener('input', function() {
     });
 });
 
-
-
 // Function to handle link selection
 function selectLink(selectedLink) {
     // Remove 'selected' class from all links
@@ -234,8 +260,6 @@ function selectLink(selectedLink) {
     selectedLink.classList.add('selected');
 }
 
-
-
 function toggleMenu(menuHeader) {
     var submenu = menuHeader.nextElementSibling; // Get the submenu
     if (submenu.style.display === "none" || submenu.style.display === "") {
@@ -246,8 +270,6 @@ function toggleMenu(menuHeader) {
         menuHeader.querySelector('.menu-indicator').textContent = '>'; // Change indicator back to '>'
     }
 }
-
-
 
 // Add styles for rectangular buttons
 const styles = `
@@ -273,4 +295,62 @@ const styles = `
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
+document.head.appendChild(styleSheet);     
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.querySelector('.fixed-buttons');
+
+    function changeButtonColorOnScroll() {
+        if (window.scrollY > 50) { // Change '100' to the scroll distance you want
+            button.classList.add('scrolled');
+        } else {
+            button.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', changeButtonColorOnScroll);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector('.text-button');
+    const headings = document.querySelectorAll('h3'); // All headings to track
+
+    function updateButtonState() {
+        // Get the current scroll position
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+        // Loop through all headings
+        headings.forEach((heading) => {
+            const headingTop = heading.offsetTop;
+
+            if (scrollPosition >= headingTop) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', updateButtonState);
+    updateButtonState(); // Initial call in case already scrolled
+});
